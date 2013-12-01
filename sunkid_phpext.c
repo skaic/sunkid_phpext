@@ -31,8 +31,8 @@
 /*{{{ sunkid_phpext_functions
  */
 const zend_function_entry sunkid_phpext_functions[] = {
-	PHP_FE(convert_i2s, NULL)
-	PHP_FE_END
+    PHP_FE(convert_i2s, NULL)
+    PHP_FE_END
 };
 /*}}}*/
 
@@ -40,37 +40,37 @@ const zend_function_entry sunkid_phpext_functions[] = {
 /* {{{ PHP_MINIT_FUNCTION
  */
 PHP_MINIT_FUNCTION(sunkid_phpext) {
-	return SUCCESS;
+    return SUCCESS;
 };
 /* }}} */
 
 /* {{{ PHP_MSHUTDOWN_FUNCTION
  */
 PHP_MSHUTDOWN_FUNCTION(sunkid_phpext) {
-	return SUCCESS;
+    return SUCCESS;
 };
 /* }}} */
 
 /* {{{ PHP_RINIT_FUNCTION
  */
 PHP_RINIT_FUNCTION(sunkid_phpext) {
-	return SUCCESS;
+    return SUCCESS;
 };
 /* }}} */
 
 /* {{{ PHP_RSHUTDOWN_FUNCTION
  */
 PHP_RSHUTDOWN_FUNCTION(sunkid_phpext) {
-	return SUCCESS;
+    return SUCCESS;
 };
 /* }}} */
 
 /* {{{ PHP_MINFO_FUNCTION
  */
 PHP_MINFO_FUNCTION(sunkid_phpext) {
-	//php_info_print_table_start();
-	//php_info_print_table_header(2, "sunkid_phpext support", "enabled");
-	//php_info_print_table_end();
+    //php_info_print_table_start();
+    //php_info_print_table_header(2, "sunkid_phpext support", "enabled");
+    //php_info_print_table_end();
 };
 /* }}} */
 
@@ -78,19 +78,19 @@ PHP_MINFO_FUNCTION(sunkid_phpext) {
  */
 zend_module_entry  sunkid_phpext_module_entry = {
 #if ZEND_MODULE_API_NO >= 20010901
-	STANDARD_MODULE_HEADER,
+    STANDARD_MODULE_HEADER,
 #endif
-	"sunkid_phpext",
-	sunkid_phpext_functions,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
+    "sunkid_phpext",
+    sunkid_phpext_functions,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
 #if ZEND_MODULE_API_NO >= 20010901
-	SUNKID_PHPEXT_VERSION, /* Replace with version number for your extension */
+    SUNKID_PHPEXT_VERSION, /* Replace with version number for your extension */
 #endif
-	STANDARD_MODULE_PROPERTIES
+    STANDARD_MODULE_PROPERTIES
 };
 /*}}}*/
 

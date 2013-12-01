@@ -5,6 +5,7 @@ Make*
 modules/*
 .libs/*
 autom4te.cache/*
+tests/*.sh
 *lo
 *la
 *in

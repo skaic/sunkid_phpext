@@ -17,6 +17,9 @@
 #ifndef PHP_CONVERT
 #define PHP_CONVERT
 
+#define TRUE    1
+#define FALSE   0
+
 PHP_FUNCTION(convert_i2s);
 
 #endif

@@ -6,7 +6,7 @@ Check for sunkid_phpext presence
 <?php 
 echo "sunkid_phpext extension is available";
 /*
-	you can add regression tests for your extension here
+    you can add regression tests for your extension here
 
   the output of your test code has to be equal to the
   text in the --EXPECT-- section below for the tests

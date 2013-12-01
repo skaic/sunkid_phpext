@@ -26,12 +26,13 @@
 /*{{{ convert_i2s(long num)
   */
 PHP_FUNCTION(convert_i2s) {
-	long num;
-	if(zend_parse_parametersi(ZEND_NUM_ARGS() TSRMLS_CC,"l",num)) {
-		RETURN_NULL();
-	}
-	php_printf("The integer value of paramter is: %ld\n",num);
-	RETURN_TRUE;
+    zval *znum;
+    if(zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC,"z",&znum)) {
+        RETURN_NULL();
+    }
+    convert_to_string(znum);
+    RETURN_ZVAL(znum,TRUE,FALSE);
+    return TRUE;
 }
 /*}}}*/
 
