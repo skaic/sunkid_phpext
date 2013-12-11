@@ -22,15 +22,10 @@
 #include "php_ini.h"
 #include "ext/standard/info.h"
 
-/*{{{ convert_i2s(long num)
+/*{{{ sunkid_hello()
   */
-PHP_FUNCTION(convert_i2s) {
-    zval *znum;
-    if(zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC,"z",&znum)) {
-        RETURN_NULL();
-    }
-    convert_to_string(znum);
-    RETURN_ZVAL(znum,1,0);
+PHP_FUNCTION(sunkid_hello) {
+    php_printf("Hello Kitty!\n");
     return 1;
 }
 /*}}}*/

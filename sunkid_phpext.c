@@ -14,9 +14,9 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: header 321634 2012-01-01 13:15:04Z felipe $ */
+/* $Id: $ */
 
-//加载config.h，如果配置了的话
+//加载config.h
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -31,48 +31,11 @@
 /*{{{ sunkid_phpext_functions
  */
 const zend_function_entry sunkid_phpext_functions[] = {
-    PHP_FE(convert_i2s, NULL)
+    PHP_FE(sunkid_hello, NULL)
     PHP_FE_END
 };
 /*}}}*/
 
-
-/* {{{ PHP_MINIT_FUNCTION
- */
-PHP_MINIT_FUNCTION(sunkid_phpext) {
-    return SUCCESS;
-};
-/* }}} */
-
-/* {{{ PHP_MSHUTDOWN_FUNCTION
- */
-PHP_MSHUTDOWN_FUNCTION(sunkid_phpext) {
-    return SUCCESS;
-};
-/* }}} */
-
-/* {{{ PHP_RINIT_FUNCTION
- */
-PHP_RINIT_FUNCTION(sunkid_phpext) {
-    return SUCCESS;
-};
-/* }}} */
-
-/* {{{ PHP_RSHUTDOWN_FUNCTION
- */
-PHP_RSHUTDOWN_FUNCTION(sunkid_phpext) {
-    return SUCCESS;
-};
-/* }}} */
-
-/* {{{ PHP_MINFO_FUNCTION
- */
-PHP_MINFO_FUNCTION(sunkid_phpext) {
-    //php_info_print_table_start();
-    //php_info_print_table_header(2, "sunkid_phpext support", "enabled");
-    //php_info_print_table_end();
-};
-/* }}} */
 
 /*{{{ module entry
  */

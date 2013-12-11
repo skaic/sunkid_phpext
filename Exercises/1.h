@@ -17,6 +17,6 @@
 #ifndef PHP_CONVERT
 #define PHP_CONVERT
 
-PHP_FUNCTION(convert_i2s);
+PHP_FUNCTION(sunkid_hello);
 
 #endif
