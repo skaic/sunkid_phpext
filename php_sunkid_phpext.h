@@ -31,7 +31,7 @@ PHP_RINIT_FUNCTION(sunkid_phpext);
 PHP_RSHUTDOWN_FUNCTION(sunkid_phpext);
 PHP_MINFO_FUNCTION(sunkid_phpext);
 
-#define SUNKID_PHPEXT_VERSION    "0.0.1"
+#define SUNKID_PHPEXT_VERSION    "0.1"
 
 #endif
 
