@@ -21,7 +21,6 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
-#include "convert.h"
 
 /*{{{ convert_i2s(long num)
   */
@@ -31,8 +30,8 @@ PHP_FUNCTION(convert_i2s) {
         RETURN_NULL();
     }
     convert_to_string(znum);
-    RETURN_ZVAL(znum,TRUE,FALSE);
-    return TRUE;
+    RETURN_ZVAL(znum,1,0);
+    return 1;
 }
 /*}}}*/
 
