@@ -14,11 +14,9 @@
    +----------------------------------------------------------------------+
 */
 
-#ifndef PHP_EXERCISES_1
-#define PHP_EXERCISES_1
+#ifndef PHP_EXERCISES_2
+#define PHP_EXERCISES_2
 
-PHP_FUNCTION(sunkid_hello);
-PHP_FUNCTION(sunkid_echo);
-PHP_FUNCTION(sunkid_sum);
+PHP_FUNCTION(sunkid_value);
 
 #endif

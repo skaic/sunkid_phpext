@@ -14,9 +14,13 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: $ */
+/* 
+ * 练习二
+ *   变量练习
+ *   1. 创建变量
+ *   2. 修改变量
+ */ 
 
-//加载config.h
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -24,43 +28,38 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
-#include "php_sunkid_phpext.h"
 
-#include "Exercises/1.h"
-#include "Exercises/2.h"
 
-/*{{{ sunkid_phpext_functions
+/*{{{ function sunkid_value() {
+ *      global $sunkid;
+ *      if(!isset($sunkid)) {
+ *          $sunkid = 0;
+ *      } else { 
+ *          $sunkid++;
+ *      }
+ *    }
  */
-const zend_function_entry sunkid_phpext_functions[] = {
-    PHP_FE(sunkid_hello, NULL)
-    PHP_FE(sunkid_echo, NULL)
-    PHP_FE(sunkid_sum, NULL)
-    PHP_FE(sunkid_value, NULL)
-    PHP_FE_END
-};
+PHP_FUNCTION(sunkid_value) {
+    zval **sunkid,*value;
+    long tmp;
+    //初始化一个变量
+    MAKE_STD_ZVAL(value);
+    //读取全局变量
+    if ( zend_hash_find(
+                &EG(symbol_table),
+                "sunkid",
+                sizeof("sunkid"),
+                (void **)&sunkid)  == FAILURE || Z_TYPE_PP(sunkid) == IS_NULL) {
+        //全局变量下找不到sunkid变量，或者变量类型为null时
+        //设置默认值为0
+        ZVAL_LONG(value,0);
+    } else {
+        tmp = Z_LVAL_PP(sunkid); 
+        ZVAL_LONG(value,tmp+1);
+    }
+
+    //设置全局变量
+    ZEND_SET_GLOBAL_VAR("sunkid",value); 
+    return 1;
+}
 /*}}}*/
-
-
-/*{{{ module entry
- */
-zend_module_entry  sunkid_phpext_module_entry = {
-#if ZEND_MODULE_API_NO >= 20010901
-    STANDARD_MODULE_HEADER,
-#endif
-    "sunkid_phpext",
-    sunkid_phpext_functions,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-#if ZEND_MODULE_API_NO >= 20010901
-    SUNKID_PHPEXT_VERSION, /* Replace with version number for your extension */
-#endif
-    STANDARD_MODULE_PROPERTIES
-};
-/*}}}*/
-
-#ifdef COMPILE_DL_SUNKID_PHPEXT
-ZEND_GET_MODULE(sunkid_phpext)
-#endif

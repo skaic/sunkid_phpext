@@ -3,19 +3,12 @@ Check for sunkid_phpext presence
 --SKIPIF--
 <?php if (!extension_loaded("sunkid_phpext")) print "skip"; ?>
 --FILE--
-<?php 
-echo "sunkid_phpext extension is available";
-/*
-    you can add regression tests for your extension here
-
-  the output of your test code has to be equal to the
-  text in the --EXPECT-- section below for the tests
-  to pass, differences between the output and the
-  expected text are interpreted as failure
-
-  see php5/README.TESTING for further information on
-  writing regression tests
-*/
+<?php
+sunkid_hello();
+sunkid_echo("Hello sk\n");
+echo sunkid_sum(1,2);
 ?>
 --EXPECT--
-sunkid_phpext extension is available
+Hello Kitty!
+Hello sk
+3

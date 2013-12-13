@@ -4,11 +4,13 @@ Check for sunkid_phpext presence
 <?php if (!extension_loaded("sunkid_phpext")) print "skip"; ?>
 --FILE--
 <?php
-sunkid_hello();
-sunkid_echo("Hello sk\n");
-echo sunkid_sum(1,2);
+global $sunkid;
+sunkid_value();
+echo $sunkid;
+sunkid_value();
+echo $sunkid;
+sunkid_value();
+echo $sunkid;
 ?>
 --EXPECT--
-Hello Kitty!
-Hello sk
-3
+012
