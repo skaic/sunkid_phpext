@@ -18,5 +18,7 @@
 #define PHP_CONVERT
 
 PHP_FUNCTION(sunkid_hello);
+PHP_FUNCTION(sunkid_echo);
+PHP_FUNCTION(sunkid_sum);
 
 #endif

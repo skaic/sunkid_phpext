@@ -5,6 +5,10 @@ Check for sunkid_phpext presence
 --FILE--
 <?php
 sunkid_hello();
+sunkid_echo("Hello sk\n");
+echo sunkid_sum(1,2);
 ?>
 --EXPECT--
 Hello Kitty!
+Hello sk
+3

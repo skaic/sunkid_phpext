@@ -14,6 +14,14 @@
   +----------------------------------------------------------------------+
 */
 
+/* 
+ * 练习一 
+ *   函数练习
+ *   1. 创建一个函数
+ *   2. 接受参数
+ *   3. 返回参数
+ */ 
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -22,11 +30,43 @@
 #include "php_ini.h"
 #include "ext/standard/info.h"
 
-/*{{{ sunkid_hello()
-  */
+/*{{{ function sunkid_hello() {
+ *      echo "Hello Kitty!\n";
+ *    }
+ */
 PHP_FUNCTION(sunkid_hello) {
     php_printf("Hello Kitty!\n");
     return 1;
 }
 /*}}}*/
 
+/*{{{ function sunkid_echo($message) {
+ *      echo $message;
+ *    }
+ */
+PHP_FUNCTION(sunkid_echo) {
+    zval *message;
+    if(zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC,"z",&message) == FAILURE) {
+        RETURN_NULL();
+    }
+    php_printf("%s",Z_STRVAL_P(message));
+    return 1;
+}
+/*}}}*/
+
+/*{{{ function sunkid_sum($a,$b) {
+ *      return $a + $b;
+ *    }
+ */
+PHP_FUNCTION(sunkid_sum) {
+    long a,b,sum;
+    //接受参数
+    if(zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC,"l|l",&a,&b) == FAILURE) {
+        RETURN_NULL();
+    }
+    sum = a + b;
+    //返回结果
+    RETURN_LONG(sum);
+    return 1;
+}
+/*}}}*/

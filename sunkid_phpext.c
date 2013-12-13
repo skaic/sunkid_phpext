@@ -32,6 +32,8 @@
  */
 const zend_function_entry sunkid_phpext_functions[] = {
     PHP_FE(sunkid_hello, NULL)
+    PHP_FE(sunkid_echo, NULL)
+    PHP_FE(sunkid_sum, NULL)
     PHP_FE_END
 };
 /*}}}*/
